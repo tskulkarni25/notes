@@ -1,0 +1,30 @@
+<div id="new_notes" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Create New Note</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <%= form_for Note.new, url: notes_path, method: :post do |f| %>
+          <div class="field">
+            <%= f.label :title %><br/>
+            <%= f.text_field :title, autofocus: true, class: "col-12" %>
+          </div>
+          <div class="field">
+            <%= f.label :body %><br/>
+            <%= f.text_area :body, autofocus: true, class: "col-12" %>
+          </div>
+          <div class="field">
+            <%= f.label :tag_list %><br/>
+            <%= f.text_field :tag_list, autofocus: true, class: "col-12" %>
+          </div>
+
+          <div class="actions mt-20">
+            <%= f.submit "Create", class: "btn btn-success" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

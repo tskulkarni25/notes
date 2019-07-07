@@ -1,0 +1,36 @@
+<div class="row">
+  <h2 class="col-10">Note Details</h2>
+  <%= link_to "<button class='btn btn-warning'>Edit</button>".html_safe, edit_note_path(@note), class: "col-1" %>
+  <%= link_to "<button class='btn btn-danger'>Delete</button>".html_safe, note_path(@note), method: :delete, class: "col-1", data: {confirm: "Are you sure?"} %>
+</div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="<%= notes_path %>">Home</a></li>
+    <li class="breadcrumb-item"><%= @note.id %></li>
+    <li class="breadcrumb-item active" aria-current="page">Details</li>
+  </ol>
+</nav>
+<table class="mt-20" border="1">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td><%= @note.title %></td>
+    </tr>
+    <tr>
+      <th>Body</th>
+      <td><%= @note.body %></td>
+    </tr>
+    <tr>
+      <th>Tags</th>
+      <td><%= @note.tags.map(&:name).join(", ") %></td>
+    </tr>
+    <tr>
+      <th>Created At</th>
+      <td><%= @note.created_at.strftime("%b %e %Y, %T") %></td>
+    </tr>
+    <tr>
+      <th>Last Updated At</th>
+      <td><%= @note.updated_at.strftime("%b %e %Y, %T") %></td>
+    </tr>
+  </tbody>
+</table>

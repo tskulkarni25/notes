@@ -1,0 +1,13 @@
+<div class="row">
+  <% @notes.each do |note| %>
+    <div class="col-12 col-lg-4 col-xl-4 mt-20">
+      <div class="card yellow">
+        <div class="card-body">
+          <h5 class="card-title"><%= note.title %></h5>
+          <p class="card-text"><%= note.body %></p>
+          <%= link_to "View Details", note_path(note), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

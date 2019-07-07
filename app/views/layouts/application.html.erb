@@ -9,6 +9,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="flash">
+      <%= render "layouts/alerts" %>
+    </div>
+
+    <nav class="navbar navbar-light yellow row">
+      <%= link_to "<h1>Notes</h1>".html_safe, root_path, class: 'navbar-brand col-9' %>
+      <% if user_signed_in? %>
+        <%= link_to "<button class='btn btn-primary'>New</button>".html_safe, "javascript:void(0)", class: "col-1", data: {toggle: "modal", target: "#new_notes"} %>
+        <%= link_to "<button class='btn btn-primary'>Logout</button>".html_safe, destroy_user_session_path, method: :delete, class: 'col-1' %>
+      <% end %>
+    </nav>
+
+    <div class="container ptb-50">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/new_modal" %>
   </body>
 </html>
