@@ -1,24 +1,6 @@
-# README
+# NOTES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project simply demonstrates CURD operations for notes.
+Users can sign-up/sign-in and each user can have their own notes.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
